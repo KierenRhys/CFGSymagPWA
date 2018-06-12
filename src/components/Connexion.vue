@@ -49,7 +49,7 @@ export default {
   methods: {
     // Connexion à l'application
     connexion () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/utilisateur/' + this.login + '/' + sha512(this.password))
+      this.$http.get('http://cfg-api.cleverapps.io/public/utilisateur/' + this.login + '/' + sha512(this.password))
         .then(response => {
           this.idUtilisateur = response.body
           if (this.idUtilisateur !== null) {
