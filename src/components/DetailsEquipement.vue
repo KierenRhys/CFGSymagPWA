@@ -161,7 +161,7 @@ export default {
     // Appelle l'API qui renvoie les données de l'équipement sélectionné
     detailsEquipement () {
       if (this.type === 'serveur') {
-        this.$http.get('http://127.0.0.1/CFGRest/public/serveur/' + this.$route.params.id)
+        this.$http.get('http://cfg-api.cleverapps.io/public/serveur/' + this.$route.params.id)
           .then(response => {
             this.designation = response.body.designation
             this.reference = response.body.reference
@@ -170,7 +170,7 @@ export default {
           })
       }
       if (this.type === 'tpv') {
-        this.$http.get('http://127.0.0.1/CFGRest/public/tpv/' + this.$route.params.id)
+        this.$http.get('http://cfg-api.cleverapps.io/public/tpv/' + this.$route.params.id)
           .then(response => {
             this.designation = response.body.designation
             this.reference = response.body.reference
@@ -179,7 +179,7 @@ export default {
           })
       }
       if (this.type === 'logiciel') {
-        this.$http.get('http://127.0.0.1/CFGRest/public/logiciel/' + this.$route.params.id)
+        this.$http.get('http://cfg-api.cleverapps.io/public/logiciel/' + this.$route.params.id)
           .then(response => {
             this.designation = response.body.designation
             this.reference = response.body.reference
@@ -191,7 +191,7 @@ export default {
     // Modification d'un équipement
     modifEquipement () {
       if (this.type === 'serveur') {
-        this.$http.put('http://127.0.0.1/CFGRest/public/serveur/' + this.$route.params.id, {
+        this.$http.put('http://cfg-api.cleverapps.io/public/serveur/' + this.$route.params.id, {
           'designation': this.designation,
           'reference': this.reference,
           'numeroserie': this.numeroserie,
@@ -200,7 +200,7 @@ export default {
           .then(this.listeEquipements())
       }
       if (this.type === 'tpv') {
-        this.$http.put('http://127.0.0.1/CFGRest/public/tpv/' + this.$route.params.id, {
+        this.$http.put('http://cfg-api.cleverapps.io/public/tpv/' + this.$route.params.id, {
           'designation': this.designation,
           'reference': this.reference,
           'numeroserie': this.numeroserie,
@@ -209,7 +209,7 @@ export default {
           .then(this.listeEquipements())
       }
       if (this.type === 'logiciel') {
-        this.$http.put('http://127.0.0.1/CFGRest/public/logiciel/' + this.$route.params.id, {
+        this.$http.put('http://cfg-api.cleverapps.io/public/logiciel/' + this.$route.params.id, {
           'designation': this.designation,
           'reference': this.reference,
           'licence': this.licence,
@@ -221,15 +221,15 @@ export default {
     // Suppression d'un équipement
     suppEquipement () {
       if (this.type === 'serveur') {
-        this.$http.delete('http://127.0.0.1/CFGRest/public/serveur/' + this.$route.params.id)
+        this.$http.delete('http://cfg-api.cleverapps.io/public/serveur/' + this.$route.params.id)
           .then(this.listeEquipements())
       }
       if (this.type === 'tpv') {
-        this.$http.delete('http://127.0.0.1/CFGRest/public/tpv/' + this.$route.params.id)
+        this.$http.delete('http://cfg-api.cleverapps.io/public/tpv/' + this.$route.params.id)
           .then(this.listeEquipements())
       }
       if (this.type === 'logiciel') {
-        this.$http.delete('http://127.0.0.1/CFGRest/public/logiciel/' + this.$route.params.id)
+        this.$http.delete('http://cfg-api.cleverapps.io/public/logiciel/' + this.$route.params.id)
           .then(this.listeEquipements())
       }
     },
