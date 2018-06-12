@@ -180,7 +180,7 @@ export default {
   methods: {
     // Ajout d'un serveur
     ajoutServeur () {
-      this.$http.post('http://127.0.0.1/CFGRest/public/serveur', {
+      this.$http.post('http://cfg-api.cleverapps.io/public/serveur', {
         'designation': this.designation,
         'reference': this.reference,
         'numeroserie': this.numeroserie,
@@ -191,7 +191,7 @@ export default {
     },
     // Ajout d'un TPV
     ajoutTPV () {
-      this.$http.post('http://127.0.0.1/CFGRest/public/tpv', {
+      this.$http.post('http://cfg-api.cleverapps.io/public/tpv', {
         'designation': this.designation,
         'reference': this.reference,
         'numeroserie': this.numeroserie,
@@ -202,7 +202,7 @@ export default {
     },
     // Ajout d'un logiciel
     ajoutLogiciel () {
-      this.$http.post('http://127.0.0.1/CFGRest/public/logiciel', {
+      this.$http.post('http://cfg-api.cleverapps.io/public/logiciel', {
         'designation': this.designation,
         'reference': this.reference,
         'licence': this.licence,
@@ -213,21 +213,21 @@ export default {
     },
     // Liste des numéros de série des serveurs
     listeServeursNumeros () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/serveursNumeros')
+      this.$http.get('http://cfg-api.cleverapps.io/public/serveursNumeros')
         .then(response => {
           this.serveursNumeros = response.body
         })
     },
     // Liste des numéros de série des TPVs
     listeTpvsNumeros () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/tpvsNumeros')
+      this.$http.get('http://cfg-api.cleverapps.io/public/tpvsNumeros')
         .then(response => {
           this.tpvsNumeros = response.body
         })
     },
     // Liste des licences des logiciels
     listeLogicielsLicences () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/logicielsLicences')
+      this.$http.get('http://cfg-api.cleverapps.io/public/logicielsLicences')
         .then(response => {
           this.logicielsLicences = response.body
         })
