@@ -505,7 +505,7 @@ export default {
   methods: {
     // Appelle l'API qui renvoie les données du magasin sélectionné
     detailsMagasins () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/magasin/' + this.$route.params.id)
+      this.$http.get('http://cfg-api.cleverapps.io/public/magasin/' + this.$route.params.id)
         .then(response => {
           this.id = response.body.id
           this.site = response.body.site
@@ -537,7 +537,7 @@ export default {
     },
     // Appelle l'API qui modifie les données du magasin par rapport aux données du formulaire
     modifMagasin () {
-      this.$http.put('http://127.0.0.1/CFGRest/public/magasin/' + this.$route.params.id, {
+      this.$http.put('http://cfg-api.cleverapps.io/public/magasin/' + this.$route.params.id, {
         'site': this.site,
         'adresse': this.adresse,
         'ville': this.ville,
@@ -568,7 +568,7 @@ export default {
     },
     // Appelle l'API qui supprime le magasin
     suppMagasin () {
-      this.$http.delete('http://127.0.0.1/CFGRest/public/magasin/' + this.$route.params.id)
+      this.$http.delete('http://cfg-api.cleverapps.io/public/magasin/' + this.$route.params.id)
         .then(this.$router.push({name: 'magasins'}))
     },
     // Lien vers la liste des équipements
