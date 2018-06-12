@@ -514,7 +514,7 @@ export default {
       if (mm < 10) { mm = '0' + mm }
       if (minu < 10) { minu = '0' + minu }
       date = yyyy + '-' + mm + '-' + dd + ' ' + hour + ':' + minu + ':' + sec
-      this.$http.post('http://127.0.0.1/CFGRest/public/magasin', {
+      this.$http.post('http://cfg-api.cleverapps.io/public/magasin', {
         'dateajout': date,
         'enseigne': this.enseigne,
         'logo': this.logo,
