@@ -67,7 +67,7 @@ export default {
     listeMagasins () {
       if (navigator.onLine) {
         this.$nextTick()
-        this.$http.get('http://127.0.0.1/CFGRest/public/magasins/' + this.$cookie.get('idUtilisateur'))
+        this.$http.get('http://cfg-api.cleverapps.io/public/magasins/' + this.$cookie.get('idUtilisateur'))
           .then(response => {
             this.magasins = response.body
             localStorage.setItem('magasins', JSON.stringify(response.body))
@@ -78,7 +78,7 @@ export default {
     },
     // Appelle l'API qui permet d'envoyer un mail avec les données du magasin et de ses équipements
     sendMail (id) {
-      this.$http.get('http://127.0.0.1/CFGRest/public/mail/' + id)
+      this.$http.get('http://cfg-api.cleverapps.io/public/mail/' + id)
       this.snackbar = true
     },
     // Vérification de la connexion
