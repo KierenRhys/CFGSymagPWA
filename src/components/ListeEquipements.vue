@@ -100,21 +100,21 @@ export default {
   methods: {
     // Appelle l'API qui renvoie la liste des serveurs pour un magasin
     listeServeurs () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/magasin/serveurs/' + this.$route.params.id)
+      this.$http.get('http://cfg-api.cleverapps.io/public/magasin/serveurs/' + this.$route.params.id)
         .then(response => {
           this.serveurs = response.body
         })
     },
     // Appelle l'API qui renvoie la liste des logiciels pour un magasin
     listeLogiciels () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/magasin/logiciels/' + this.$route.params.id)
+      this.$http.get('http://cfg-api.cleverapps.io/public/magasin/logiciels/' + this.$route.params.id)
         .then(response => {
           this.logiciels = response.body
         })
     },
     // Appelle l'API qui renvoie la liste des TPVs pour un magasin
     listeTpvs () {
-      this.$http.get('http://127.0.0.1/CFGRest/public/magasin/tpvs/' + this.$route.params.id)
+      this.$http.get('http://cfg-api.cleverapps.io/public/magasin/tpvs/' + this.$route.params.id)
         .then(response => {
           this.tpvs = response.body
         })
